@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garima Jain — ML Engineer & Data Scientist</title>
-<meta name="description" content="Garima Jain — ML Engineer & Data Scientist. Patent holder, published author, Columbia MS in Data Science, formerly Dell Technologies.">
+<title>Garima Jain, ML Engineer & Data Scientist</title>
+<meta name="description" content="Garima Jain, ML Engineer & Data Scientist. Patent holder, published author, Columbia MS in Data Science, formerly Dell Technologies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -163,8 +163,10 @@
 
   /* Certifications */
   .cert-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-  .cert-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; font-size: .95rem; }
+  .cert-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; font-size: .95rem; display: flex; align-items: center; gap: 18px; }
   .cert-list .issuer { color: var(--muted); font-size: .85rem; }
+  .cert-list img { width: 130px; border-radius: 6px; border: 1px solid var(--border); flex-shrink: 0; }
+  @media (max-width: 560px) { .cert-list li { flex-direction: column; align-items: flex-start; } .cert-list img { width: 100%; max-width: 220px; } }
 
   /* Contact */
   #contact { text-align: center; padding-bottom: 96px; }
@@ -197,8 +199,8 @@
     <div>
     <span class="hero-kicker">ML Engineer · Data Scientist · Patent Holder</span>
     <h1>Hi, I'm Garima Jain.</h1>
-    <p class="tagline">I build AI/ML systems that solve real problems — from detecting ransomware to diagnosing CPU failures to saving engineering teams hundreds of hours.</p>
-    <p class="intro">Currently finishing my M.S. in Data Science at Columbia University, where I apply statistical analysis and ML to clinical research. Previously a Software Engineer at Dell Technologies, where I earned a patent, contributed to MLPerf open source, and explored quantum computing research. My range — software engineering, ML, data science, statistical research — is where curiosity took me.</p>
+    <p class="tagline">I build AI/ML systems that solve real problems, from detecting ransomware to diagnosing CPU failures to saving engineering teams hundreds of hours.</p>
+    <p class="intro">Currently finishing my M.S. in Data Science at Columbia University, where I apply statistical analysis and ML to clinical research. Previously a Software Engineer at Dell Technologies, where I earned a patent, contributed to MLPerf open source, and explored quantum computing research. My range across software engineering, ML, data science, and statistical research is where curiosity took me.</p>
     <div class="hero-badges">
       <span class="badge">📍 New York, NY</span>
       <span class="badge">🎓 Columbia MS Data Science '26</span>
@@ -239,8 +241,10 @@
         <div class="when">Jun 2026 – Present</div>
         <div>
           <h3>Predictive Analytics Intern</h3>
-          <div class="org">NYC Administration for Children's Services</div>
-          <p>Applying predictive analytics to support data-driven decision-making in child welfare services.</p>
+          <div class="org">NYC Administration for Children's Services · Office of Research and Analytics</div>
+          <p>Developing an end-to-end Random Forest predictive analytics pipeline on 700K+ child welfare records to identify children at risk of severe harm within 24 months.</p>
+          <p>Built an explainable AI framework using SHAP, LIME, Anchors, PDP, and ALE, with calibration and conformal prediction to improve model transparency and reliability.</p>
+          <p>Evaluated and optimized model performance using ROC-AUC, PR-AUC, hyperparameter tuning, and scalable automated workflows, delivering actionable insights for child welfare decision making.</p>
         </div>
       </div>
       <div class="job">
@@ -248,7 +252,7 @@
         <div>
           <h3>Research Assistant</h3>
           <div class="org">Columbia University College of Dental Medicine</div>
-          <p>Built a Python-based statistical analysis pipeline for a clinical orthodontics study — automated hypothesis testing, multivariable regression, and ICC-based reliability validation, identifying treatment duration as the primary predictor of post-treatment occlusal outcomes.</p>
+          <p>Built a Python-based statistical analysis pipeline for a clinical orthodontics study, automating hypothesis testing, multivariable regression, and ICC-based reliability validation, identifying treatment duration as the primary predictor of post-treatment occlusal outcomes.</p>
         </div>
       </div>
       <div class="job">
@@ -265,7 +269,7 @@
           <h3>Software Engineer II & Quantum Computing Researcher</h3>
           <div class="org">Dell Technologies · ISG CTO Office</div>
           <p>Authored a container orchestration standardization proposal adopted in MLPerf Storage v2023.2.0; integrated benchmarks into Dell pipelines, cutting validation time 60% and saving 400+ hours per product team across a $4B storage portfolio.</p>
-          <p>Developed QPERT, an explainability framework for Quantum Circuit Learning — hybrid quantum-classical pipelines in Qiskit with SHAP/LIME explainability and causal ablation studies.</p>
+          <p>Developed QPERT, an explainability framework for Quantum Circuit Learning, building hybrid quantum-classical pipelines in Qiskit with SHAP/LIME explainability and causal ablation studies.</p>
         </div>
       </div>
       <div class="job">
@@ -273,7 +277,7 @@
         <div>
           <h3>Software Engineer I</h3>
           <div class="org">Dell Technologies · PowerStore</div>
-          <p>Built FastPass, an ML-driven CI/CD test prioritization algorithm integrated with GitHub — reduced developer testing time by 99.9% and saved $500K+ annually by eliminating 100+ hours/month of hardware usage.</p>
+          <p>Built FastPass, an ML-driven CI/CD test prioritization algorithm integrated with GitHub that reduced developer testing time by 99.9% and saved $500K+ annually by eliminating 100+ hours/month of hardware usage.</p>
         </div>
       </div>
       <div class="job">
@@ -281,14 +285,14 @@
         <div>
           <h3>Software Engineer I</h3>
           <div class="org">Dell Technologies · PowerMax</div>
-          <p>Pioneered CPat, a patented ML algorithm with a real-time performance insights API detecting CPU degradation across thousands of threads — cut root-cause analysis by ~1 week per issue, delivering $1M+ annual efficiency gains.</p>
-          <p>Developed UnTice, an NLP & GenAI-driven error diagnosis algorithm contextualizing complex storage array errors — $500K+ annual savings.</p>
+          <p>Pioneered CPat, a patented ML algorithm with a real-time performance insights API detecting CPU degradation across thousands of threads that cut root-cause analysis by ~1 week per issue, delivering $1M+ annual efficiency gains.</p>
+          <p>Developed UnTice, an NLP & GenAI-driven error diagnosis algorithm contextualizing complex storage array errors, delivering $500K+ annual savings.</p>
         </div>
       </div>
       <div class="job">
         <div class="when">May 2022 – Aug 2022</div>
         <div>
-          <h3>Software Engineer Intern — Ransomware Detection through ML</h3>
+          <h3>Software Engineer Intern, Ransomware Detection through ML</h3>
           <div class="org">Dell Technologies</div>
           <p>Built an ML model using multivariate sensor data to predict ransomware across 13 storage products, enabling real-time threat monitoring.</p>
         </div>
@@ -313,14 +317,14 @@
 
       <div class="card">
         <div class="card-top"><h3>Capstone: Agentic AI</h3><span class="private-flag">Private</span></div>
-        <p>Columbia MS capstone project building an agentic AI system — autonomous agents that plan, reason, and execute multi-step tasks.</p>
+        <p>Columbia MS capstone project building an agentic AI system: autonomous agents that plan, reason, and execute multi-step tasks.</p>
         <div class="tags"><span class="tag">TypeScript</span><span class="tag">Agentic AI</span><span class="tag">LLM</span></div>
         <div class="card-links"><a href="https://github.com/garimajain05/capstone-agenticai" target="_blank" rel="noopener">Repository →</a></div>
       </div>
 
       <div class="card">
         <div class="card-top"><h3>Data Analyst Agent</h3></div>
-        <p>An LLM-powered agent that performs end-to-end data analysis — ingesting datasets, running statistical analysis, and generating insights autonomously.</p>
+        <p>An LLM-powered agent that performs end-to-end data analysis, ingesting datasets, running statistical analysis, and generating insights autonomously.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Data Analysis</span></div>
         <div class="card-links"><a href="https://github.com/garimajain05/Data-Analyst-Agent" target="_blank" rel="noopener">Repository →</a></div>
       </div>
@@ -347,7 +351,7 @@
 
       <div class="card">
         <div class="card-top"><h3>QPERT</h3></div>
-        <p>Explainability framework for Quantum Circuit Learning — identifies minimal feature perturbations driving class shifts, built on Qiskit with SHAP/LIME and causal ablation.</p>
+        <p>Explainability framework for Quantum Circuit Learning that identifies minimal feature perturbations driving class shifts, built on Qiskit with SHAP/LIME and causal ablation.</p>
         <div class="tags"><span class="tag">Qiskit</span><span class="tag">Quantum ML</span><span class="tag">Explainability</span></div>
       </div>
 
@@ -360,7 +364,7 @@
 
       <div class="card">
         <div class="card-top"><h3>Posterior Occlusal Study</h3><span class="private-flag">Private</span></div>
-        <p>Statistical analysis pipeline for a Columbia clinical orthodontics study — hypothesis testing, multivariable regression, ICC reliability validation, and publication-ready reporting.</p>
+        <p>Statistical analysis pipeline for a Columbia clinical orthodontics study: hypothesis testing, multivariable regression, ICC reliability validation, and publication-ready reporting.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Statistics</span><span class="tag">Clinical Research</span></div>
       </div>
 
@@ -377,7 +381,7 @@
 <section id="speaking">
   <div class="container">
     <h2 class="section-title">Speaking & Conferences</h2>
-    <p class="section-sub">I've spoken to 700+ students and professionals about AI careers, patents, and responsible tech — and I make time to keep learning at conferences too.</p>
+    <p class="section-sub">I've spoken to 700+ students and professionals about AI careers, patents, and responsible tech, and I make time to keep learning at conferences too.</p>
     <div class="grid">
 
       <div class="card photo">
@@ -428,7 +432,7 @@
       <div class="card photo">
         <img src="images/nerdy-girl-panel.jpg" alt="Panelist at Nerdy Girl Success Career and Leadership Summit">
         <div class="card-body">
-          <h3>Nerdy Girl Success — Career & Leadership Summit</h3>
+          <h3>Nerdy Girl Success, Career & Leadership Summit</h3>
           <span class="meta">Panelist · 2024</span>
           <p>Spoke with aspiring young women and future leaders about careers in tech and leadership.</p>
         </div>
@@ -439,7 +443,7 @@
         <div class="card-body">
           <h3>AI-Native Women NYC · Her Frontier</h3>
           <span class="meta">Attendee · 2026</span>
-          <p>"Build, Operate, Influence" — a community of women learning, building, and creating with AI.</p>
+          <p>"Build, Operate, Influence", a community of women learning, building, and creating with AI.</p>
         </div>
       </div>
 
@@ -465,7 +469,7 @@
       <div class="card photo">
         <img src="images/n2n-hackathon.jpg" alt="N2N Hackathon win at Columbia University">
         <div class="card-body">
-          <span class="win-flag">🏆 Winner — Most Community-Focused</span>
+          <span class="win-flag">🏆 Winner, Most Community-Focused</span>
           <h3>Narrative 2 Numbers (N2N) Hackathon · Columbia</h3>
           <span class="meta">2025 · Team "Voice to Metrics" · $1,000 AWS credits</span>
           <p>Won the Most Community-Focused track with Voice to Metrics, turning community narratives into actionable data.</p>
@@ -489,13 +493,18 @@
 <section id="certifications">
   <div class="container">
     <h2 class="section-title">Certifications & Awards</h2>
-    <p class="section-sub">Recognized with $43K+ in scholarships and awards.</p>
+    <p class="section-sub">Professional certifications, clinical research training, and $43K+ in scholarships and awards.</p>
     <ul class="cert-list">
-      <li><span class="title">Generative AI with Large Language Models</span><br><span class="issuer">DeepLearning.AI · AWS · Coursera — 2024</span></li>
-      <li><span class="title">Machine Learning</span><br><span class="issuer">Certification</span></li>
+      <li><img src="images/cert-genai-llm.jpg" alt="Generative AI with Large Language Models certificate" loading="lazy"><div><span class="title">Generative AI with Large Language Models</span><br><span class="issuer">DeepLearning.AI · AWS · Coursera, 2024</span></div></li>
+      <li><img src="images/cert-globee.jpg" alt="Globee Awards for Artificial Intelligence 2025 judge certificate" loading="lazy" onerror="this.style.display='none'"><div><span class="title">Industry Judge, Globee® Awards for Artificial Intelligence</span><br><span class="issuer">Globee Awards, 2025</span></div></li>
+      <li><img src="images/cert-ml.jpg" alt="Machine Learning Specialization certificate" loading="lazy" onerror="this.style.display='none'"><div><span class="title">Machine Learning Specialization</span><br><span class="issuer">Stanford University · DeepLearning.AI · Coursera, 2024</span></div></li>
+      <li><img src="images/cert-citi-gcp.jpg" alt="Good Clinical Practice (GCP) for Clinical Trials certificate" loading="lazy"><div><span class="title">Good Clinical Practice (GCP) for Clinical Trials with Investigational Drugs and Medical Devices (U.S. FDA Focus)</span><br><span class="issuer">CITI Program · Columbia University, 2026 · <a href="https://www.citiprogram.org/verify/?w631a74de-e52e-414d-ab3a-f11f57a5e4cb-78064770" target="_blank" rel="noopener">Verify</a></span></div></li>
+      <li><img src="images/cert-citi-biomed.jpg" alt="Human Subjects Protection certificate" loading="lazy"><div><span class="title">Human Subjects Protection, Biomedical Research</span><br><span class="issuer">CITI Program · Columbia University, 2026 · <a href="https://www.citiprogram.org/verify/?w58f4cf69-dda2-4e4e-83b8-f0792b2da958-78084938" target="_blank" rel="noopener">Verify</a></span></div></li>
+      <li><img src="images/cert-citi-sbr.jpg" alt="Human Subjects Protection certificate" loading="lazy"><div><span class="title">Human Subjects Protection, Social & Behavioral Research (SBR)</span><br><span class="issuer">CITI Program · Columbia University, 2026 · <a href="https://www.citiprogram.org/verify/?wc4c572d5-4798-4ee6-b05e-6bc7c7677185-75502655" target="_blank" rel="noopener">Verify</a></span></div></li>
+      <li><img src="images/cert-citi-minors.jpg" alt="Research With Minors certificate" loading="lazy"><div><span class="title">Research With Minors, Biomedical (BIOMED)</span><br><span class="issuer">CITI Program · Columbia University, 2026 · <a href="https://www.citiprogram.org/verify/?w97e07a68-98dd-41ff-b098-9cb771fdaa10-78084937" target="_blank" rel="noopener">Verify</a></span></div></li>
       <li><span class="title">Advance Diploma in Computer Applications</span><br><span class="issuer">Haryana State Council IT Education Center</span></li>
       <li><span class="title">Summa Cum Laude & Dean's List</span><br><span class="issuer">UMass Lowell, B.S. Computer Science</span></li>
-      <li><span class="title">International Scholarship 2020–21 · Summer Leadership Academy Scholarship · Research Symposium 2021 "Fan Favorite"</span><br><span class="issuer">UMass Lowell & Leadership Academy — $43K+ total in scholarships and awards</span></li>
+      <li><img src="images/cert-sla.jpg" alt="Summer Leadership Academy 2021 certificate" loading="lazy" onerror="this.style.display='none'"><div><span class="title">International Scholarship 2020–21 · Summer Leadership Academy Scholarship · Research Symposium 2021 "Fan Favorite"</span><br><span class="issuer">UMass Lowell & Leadership Academy, $43K+ total in scholarships and awards</span></div></li>
     </ul>
   </div>
 </section>
@@ -503,7 +512,7 @@
 <section id="research">
   <div class="container">
     <h2 class="section-title">Publications & Patent</h2>
-    <p class="section-sub">Peer-reviewed research across AI education, human-centered AI, and time series — plus one US patent. Full list on <a href="https://scholar.google.com/scholar?q=Garima+Jain+UMass+Lowell" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="section-sub">Peer-reviewed research across AI education, human-centered AI, and time series, plus one US patent. Full list on <a href="https://scholar.google.com/scholar?q=Garima+Jain+UMass+Lowell" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <ul class="pub-list">
       <li><span class="venue">PATENT</span><span class="title">Using Thread CPU Utilization Patterns to Analyze Storage Node Performance Problems</span></li>
       <li><span class="venue">SIGCSE 2024</span><span class="title">ChemAIstry: A Novel Software Tool for Teaching Model Training in K-8 Education</span></li>
