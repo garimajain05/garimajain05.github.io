@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garima Jain — ML Engineer & Data Scientist</title>
+<meta name="description" content="Garima Jain — ML Engineer & Data Scientist. Patent holder, published author, Columbia MS in Data Science, formerly Dell Technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdfdfc;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5c5f66;
+    --accent: #2454ff;
+    --accent-soft: #eef2ff;
+    --border: #e8e8e5;
+    --tag-bg: #f4f4f2;
+    --shadow: 0 1px 3px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.05);
+    --radius: 14px;
+    --max: 980px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.2; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(253,253,252,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; color: var(--text); }
+  .nav-logo:hover { text-decoration: none; }
+  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 96px 0 72px; }
+  .hero-kicker {
+    display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent);
+    background: var(--accent-soft); padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 700; margin-bottom: 18px; }
+  .hero .tagline { font-size: 1.25rem; color: var(--muted); max-width: 640px; margin-bottom: 14px; }
+  .hero .intro { max-width: 680px; color: var(--muted); margin-bottom: 32px; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .badge {
+    font-size: .82rem; font-weight: 500; color: var(--text);
+    background: var(--tag-bg); border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 100px;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: .95rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn-primary { background: var(--text); color: #fff; }
+  .btn-primary:hover { box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+  .btn-ghost:hover { border-color: var(--muted); }
+
+  /* Sections */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-title { font-size: 1.9rem; font-weight: 700; margin-bottom: 8px; }
+  .section-sub { color: var(--muted); margin-bottom: 40px; max-width: 620px; }
+
+  /* Highlights */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px;
+  }
+  .stat .num { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .stat .label { font-size: .9rem; color: var(--muted); margin-top: 4px; }
+
+  /* Timeline (experience) */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .job {
+    display: grid; grid-template-columns: 190px 1fr; gap: 24px;
+    padding: 28px 0; border-bottom: 1px solid var(--border);
+  }
+  .job:last-child { border-bottom: none; }
+  .job .when { color: var(--muted); font-size: .88rem; padding-top: 4px; }
+  .job h3 { font-size: 1.15rem; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .job .org { color: var(--accent); font-weight: 500; font-size: .95rem; margin-bottom: 10px; }
+  .job p { color: var(--muted); font-size: .95rem; margin-bottom: 8px; }
+  @media (max-width: 720px) { .job { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* Projects */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px; display: flex; flex-direction: column;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .card h3 { font-size: 1.12rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .card .meta { font-size: .78rem; color: var(--muted); }
+  .card p { color: var(--muted); font-size: .92rem; flex-grow: 1; margin-bottom: 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tag { font-size: .74rem; font-weight: 500; background: var(--tag-bg); color: var(--muted); padding: 3px 10px; border-radius: 100px; }
+  .card-links { display: flex; gap: 16px; font-size: .88rem; font-weight: 500; }
+  .patent-flag { font-size: .74rem; font-weight: 600; color: #8a6d00; background: #fff7dd; border: 1px solid #f0e4b0; padding: 3px 10px; border-radius: 100px; }
+  .private-flag { font-size: .74rem; font-weight: 600; color: var(--muted); background: var(--tag-bg); border: 1px solid var(--border); padding: 3px 10px; border-radius: 100px; }
+
+  /* Publications */
+  .pub-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .pub-list li {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 20px; font-size: .95rem;
+  }
+  .pub-list .venue { color: var(--accent); font-weight: 600; font-size: .82rem; }
+  .pub-list .title { display: block; color: var(--text); }
+
+  /* Skills */
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .skill-group h3 { font-size: .82rem; font-family: 'Inter', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 14px; }
+  .skill-group .tags { margin-bottom: 0; }
+  .skill-group .tag { font-size: .82rem; color: var(--text); }
+
+  /* Contact */
+  #contact { text-align: center; padding-bottom: 96px; }
+  #contact .section-sub { margin: 0 auto 32px; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0; text-align: center; color: var(--muted); font-size: .85rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">Garima Jain</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <span class="hero-kicker">ML Engineer · Data Scientist · Patent Holder</span>
+    <h1>Hi, I'm Garima Jain.</h1>
+    <p class="tagline">I build AI/ML systems that solve real problems — from detecting ransomware to diagnosing CPU failures to saving engineering teams hundreds of hours.</p>
+    <p class="intro">Currently finishing my M.S. in Data Science at Columbia University, where I apply statistical analysis and ML to clinical research. Previously a Software Engineer at Dell Technologies, where I earned a patent, contributed to MLPerf open source, and explored quantum computing research. My range — software engineering, ML, data science, statistical research — is where curiosity took me.</p>
+    <div class="hero-badges">
+      <span class="badge">📍 New York, NY</span>
+      <span class="badge">🎓 Columbia MS Data Science '26</span>
+      <span class="badge">🔬 Published Author</span>
+      <span class="badge">💡 US Patent Holder</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="mailto:garimajain1105@gmail.com">Get in Touch</a>
+      <a class="btn btn-ghost" href="https://github.com/garimajain05" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/garimajain1105" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="highlights" style="padding-top: 0; border-top: none;">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="num">$2M+</div><div class="label">Annual savings delivered through ML systems at Dell</div></div>
+      <div class="stat"><div class="num">1 Patent</div><div class="label">Thread CPU utilization patterns for storage node performance analysis</div></div>
+      <div class="stat"><div class="num">6 Publications</div><div class="label">Across AI education, HCI, and time-series research venues</div></div>
+      <div class="stat"><div class="num">700+</div><div class="label">Students reached through keynotes and panels on AI careers</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-sub">Three years building production ML at enterprise scale, now bringing that rigor to data science research.</p>
+    <div class="timeline">
+      <div class="job">
+        <div class="when">Jun 2026 – Present</div>
+        <div>
+          <h3>Predictive Analytics Intern</h3>
+          <div class="org">NYC Administration for Children's Services</div>
+          <p>Applying predictive analytics to support data-driven decision-making in child welfare services.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Feb 2026 – Jul 2026</div>
+        <div>
+          <h3>Research Assistant</h3>
+          <div class="org">Columbia University College of Dental Medicine</div>
+          <p>Built a Python-based statistical analysis pipeline for a clinical orthodontics study — automated hypothesis testing, multivariable regression, and ICC-based reliability validation, identifying treatment duration as the primary predictor of post-treatment occlusal outcomes.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Sep 2025 – Jan 2026</div>
+        <div>
+          <h3>Teaching Assistant, Mathematics Department</h3>
+          <div class="org">Columbia University</div>
+          <p>TA for two sections of Calculus; graded weekly work for 100+ students and held regular office hours.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Mar 2025 – Aug 2025</div>
+        <div>
+          <h3>Software Engineer II & Quantum Computing Researcher</h3>
+          <div class="org">Dell Technologies · ISG CTO Office</div>
+          <p>Authored a container orchestration standardization proposal adopted in MLPerf Storage v2023.2.0; integrated benchmarks into Dell pipelines, cutting validation time 60% and saving 400+ hours per product team across a $4B storage portfolio.</p>
+          <p>Developed QPERT, an explainability framework for Quantum Circuit Learning — hybrid quantum-classical pipelines in Qiskit with SHAP/LIME explainability and causal ablation studies.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Feb 2024 – Mar 2025</div>
+        <div>
+          <h3>Software Engineer I</h3>
+          <div class="org">Dell Technologies · PowerStore</div>
+          <p>Built FastPass, an ML-driven CI/CD test prioritization algorithm integrated with GitHub — reduced developer testing time by 99.9% and saved $500K+ annually by eliminating 100+ hours/month of hardware usage.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Feb 2023 – Feb 2024</div>
+        <div>
+          <h3>Software Engineer I</h3>
+          <div class="org">Dell Technologies · PowerMax</div>
+          <p>Pioneered CPat, a patented ML algorithm with a real-time performance insights API detecting CPU degradation across thousands of threads — cut root-cause analysis by ~1 week per issue, delivering $1M+ annual efficiency gains.</p>
+          <p>Developed UnTice, an NLP & GenAI-driven error diagnosis algorithm contextualizing complex storage array errors — $500K+ annual savings.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">May 2022 – Aug 2022</div>
+        <div>
+          <h3>Software Engineer Intern — Ransomware Detection through ML</h3>
+          <div class="org">Dell Technologies</div>
+          <p>Built an ML model using multivariate sensor data to predict ransomware across 13 storage products, enabling real-time threat monitoring.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Sep 2020 – Aug 2024</div>
+        <div>
+          <h3>Undergraduate Student Researcher</h3>
+          <div class="org">UMass Lowell · Engaging Computing Lab (NSF Funded)</div>
+          <p>CS Pathways: built educational apps for 3 middle school curricula, taught 200+ students to build community-service apps. ChemAIstry: developed an ML model and interactive website teaching K-8 students about AI. Published at SIGCSE, CHI, FIE, and HCXAI.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A mix of agentic AI, applied ML, and open-source work. More on <a href="https://github.com/garimajain05" target="_blank" rel="noopener">GitHub</a>.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><h3>Capstone: Agentic AI</h3><span class="private-flag">Private</span></div>
+        <p>Columbia MS capstone project building an agentic AI system — autonomous agents that plan, reason, and execute multi-step tasks.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Agentic AI</span><span class="tag">LLM</span></div>
+        <div class="card-links"><a href="https://github.com/garimajain05/capstone-agenticai" target="_blank" rel="noopener">Repository →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Data Analyst Agent</h3></div>
+        <p>An LLM-powered agent that performs end-to-end data analysis — ingesting datasets, running statistical analysis, and generating insights autonomously.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Data Analysis</span></div>
+        <div class="card-links"><a href="https://github.com/garimajain05/Data-Analyst-Agent" target="_blank" rel="noopener">Repository →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Domain Q&A ChatBot</h3></div>
+        <p>A retrieval-augmented (RAG) chatbot that answers questions grounded in domain-specific documents using vector search and LLMs.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">VectorDB</span><span class="tag">NLP</span></div>
+        <div class="card-links"><a href="https://github.com/garimajain05/Domain-Q-A-ChatBot" target="_blank" rel="noopener">Repository →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>MLPerf Storage</h3><span class="patent-flag">Open Source</span></div>
+        <p>Contributor to the MLPerf™ Storage Benchmark Suite (MLCommons). Authored a container orchestration standardization proposal adopted in v2023.2.0.</p>
+        <div class="tags"><span class="tag">Benchmarking</span><span class="tag">Docker</span><span class="tag">MLCommons</span></div>
+        <div class="card-links"><a href="https://github.com/mlcommons/storage" target="_blank" rel="noopener">Upstream →</a><a href="https://github.com/garimajain05/storage" target="_blank" rel="noopener">My fork →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>CPat</h3><span class="patent-flag">Patented</span></div>
+        <p>ML algorithm with a real-time performance insights API detecting CPU degradation across thousands of threads. US patent: "Using Thread CPU Utilization Patterns to Analyze Storage Node Performance Problems."</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Performance</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>QPERT</h3></div>
+        <p>Explainability framework for Quantum Circuit Learning — identifies minimal feature perturbations driving class shifts, built on Qiskit with SHAP/LIME and causal ablation.</p>
+        <div class="tags"><span class="tag">Qiskit</span><span class="tag">Quantum ML</span><span class="tag">Explainability</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>ChemAIstry</h3></div>
+        <p>NSF-funded interactive tool teaching K-8 students to train ML models on objects safe for a chemistry lab. Published at SIGCSE 2024.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">ML Education</span><span class="tag">NSF</span></div>
+        <div class="card-links"><a href="https://github.com/garimajain05/ChemAIstry" target="_blank" rel="noopener">Repository →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Posterior Occlusal Study</h3><span class="private-flag">Private</span></div>
+        <p>Statistical analysis pipeline for a Columbia clinical orthodontics study — hypothesis testing, multivariable regression, ICC reliability validation, and publication-ready reporting.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Statistics</span><span class="tag">Clinical Research</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Face Recognition</h3><span class="private-flag">Private</span></div>
+        <p>Real-time face recognition system built with OpenCV and Python.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Computer Vision</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Publications & Patent</h2>
+    <p class="section-sub">Peer-reviewed research across AI education, human-centered AI, and time series — plus one US patent. Full list on <a href="https://scholar.google.com/scholar?q=Garima+Jain+UMass+Lowell" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <ul class="pub-list">
+      <li><span class="venue">PATENT</span><span class="title">Using Thread CPU Utilization Patterns to Analyze Storage Node Performance Problems</span></li>
+      <li><span class="venue">SIGCSE 2024</span><span class="title">ChemAIstry: A Novel Software Tool for Teaching Model Training in K-8 Education</span></li>
+      <li><span class="venue">CHI 2024</span><span class="title">Perception, Trust, Attitudes, and Models: Introducing Children to AI and Machine Learning with Five Software Exhibits</span></li>
+      <li><span class="venue">SIGCSE 2024</span><span class="title">CS Pathways: A Culturally Responsive Computer Science Curriculum for Middle School</span></li>
+      <li><span class="venue">HCXAI 2023</span><span class="title">Developing AI Educational Tools for Children</span></li>
+      <li><span class="venue">SURVEY</span><span class="title">Foundation Models for Time Series: A Survey</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">The toolkit behind the work.</p>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>AI / ML</h3>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Scikit-Learn</span><span class="tag">NLP</span><span class="tag">LLMs</span><span class="tag">GenAI</span><span class="tag">RAG</span><span class="tag">VectorDB</span><span class="tag">Recommendation Systems</span><span class="tag">Qiskit</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Languages & Data</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Groovy</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Tableau</span><span class="tag">Statistical Analysis</span><span class="tag">Data Visualization</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Engineering & Infra</h3>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Jenkins</span><span class="tag">AWS</span><span class="tag">JIRA</span><span class="tag">CI/CD</span><span class="tag">REST APIs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-sub">I'm looking for roles in AI/ML Engineering, Data Science, or Software Engineering where breadth is an asset. Also open to speaking on AI careers and responsible tech.</p>
+    <div class="hero-cta" style="justify-content: center;">
+      <a class="btn btn-primary" href="mailto:garimajain1105@gmail.com">Email Me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/garimajain1105" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/garimajain05" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Garima Jain · Built with care, hosted on GitHub Pages</div>
+</footer>
+
+</body>
+</html>
