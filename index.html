@@ -144,6 +144,28 @@
   .skill-group .tags { margin-bottom: 0; }
   .skill-group .tag { font-size: .82rem; color: var(--text); }
 
+  /* Hero grid + portrait */
+  .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; }
+  .hero-photo img {
+    width: 100%; border-radius: 20px; box-shadow: var(--shadow);
+    border: 1px solid var(--border); display: block;
+  }
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } .hero-photo { max-width: 300px; } }
+
+  /* Photo cards (speaking / hackathons) */
+  .card.photo { padding: 0; overflow: hidden; }
+  .card.photo img { width: 100%; height: 200px; object-fit: cover; object-position: center top; display: block; }
+  .card.photo .card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+  .card.photo h3 { margin-bottom: 4px; }
+  .card.photo .meta { display: block; margin-bottom: 10px; }
+  .card.photo p { margin-bottom: 0; }
+  .win-flag { display: inline-block; font-size: .74rem; font-weight: 700; color: #1a7a3a; background: #e8f7ee; border: 1px solid #bfe8cd; padding: 3px 10px; border-radius: 100px; margin-bottom: 10px; align-self: flex-start; }
+
+  /* Certifications */
+  .cert-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .cert-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; font-size: .95rem; }
+  .cert-list .issuer { color: var(--muted); font-size: .85rem; }
+
   /* Contact */
   #contact { text-align: center; padding-bottom: 96px; }
   #contact .section-sub { margin: 0 auto 32px; }
@@ -162,15 +184,17 @@
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#hackathons">Hackathons</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <div class="container">
+  <div class="container hero-grid">
+    <div>
     <span class="hero-kicker">ML Engineer · Data Scientist · Patent Holder</span>
     <h1>Hi, I'm Garima Jain.</h1>
     <p class="tagline">I build AI/ML systems that solve real problems — from detecting ransomware to diagnosing CPU failures to saving engineering teams hundreds of hours.</p>
@@ -187,6 +211,10 @@
       <a class="btn btn-ghost" href="https://github.com/garimajain05" target="_blank" rel="noopener">GitHub</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/garimajain1105" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/garima-portrait.jpg" alt="Garima Jain">
+    </div>
   </div>
 </header>
 
@@ -196,6 +224,7 @@
       <div class="stat"><div class="num">$2M+</div><div class="label">Annual savings delivered through ML systems at Dell</div></div>
       <div class="stat"><div class="num">1 Patent</div><div class="label">Thread CPU utilization patterns for storage node performance analysis</div></div>
       <div class="stat"><div class="num">6 Publications</div><div class="label">Across AI education, HCI, and time-series research venues</div></div>
+      <div class="stat"><div class="num">2 Hackathon Wins</div><div class="label">Dell ISG Hackathon 2025 & Columbia N2N Hackathon</div></div>
       <div class="stat"><div class="num">700+</div><div class="label">Students reached through keynotes and panels on AI careers</div></div>
     </div>
   </div>
@@ -345,10 +374,136 @@
   </div>
 </section>
 
+<section id="speaking">
+  <div class="container">
+    <h2 class="section-title">Speaking & Conferences</h2>
+    <p class="section-sub">I've spoken to 700+ students and professionals about AI careers, patents, and responsible tech — and I make time to keep learning at conferences too.</p>
+    <div class="grid">
+
+      <div class="card photo">
+        <img src="images/wit-2025-speaker.jpg" alt="Women in Tech Global Conference 2025 speaker card">
+        <div class="card-body">
+          <h3>Women in Tech Global Conference 2025</h3>
+          <span class="meta">Speaker · May 2025</span>
+          <p>"From Innovation to Impact: Navigating the Patent Process and Creating Lasting Value in Tech."</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/sigcse24.jpg" alt="Presenting ChemAIstry at SIGCSE 2024">
+        <div class="card-body">
+          <h3>SIGCSE 2024 · Portland, OR</h3>
+          <span class="meta">Presenter · March 2024</span>
+          <p>Presented ChemAIstry, our NSF-funded tool for teaching K-8 students how ML models are trained. Also presented CS Pathways at FIE 2022.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/algonquin-panel.jpg" alt="CS career panel at Algonquin Regional High School">
+        <div class="card-body">
+          <h3>Algonquin Regional High School</h3>
+          <span class="meta">Career Panelist · 2025</span>
+          <p>Spoke to 150+ freshman students about computer science careers, representing Dell Technologies.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/umass-tech-interviewing.jpg" alt="Technical Interviewing panel at UMass Lowell">
+        <div class="card-body">
+          <h3>UMass Lowell Technical Interviewing Panel</h3>
+          <span class="meta">Panelist · 2025</span>
+          <p>Returned to my alma mater to coach the next generation of tech talent on acing technical interviews.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/tribe-academy-panel.jpg" alt="Early Career Panel at Tribe Academy Conference, UMass Dartmouth">
+        <div class="card-body">
+          <h3>Tribe Academy Conference · UMass Dartmouth</h3>
+          <span class="meta">Panelist · 2023 & 2024</span>
+          <p>Early Career Panel speaker two years running, sharing my journey with 200+ early-career professionals and students.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/nerdy-girl-panel.jpg" alt="Panelist at Nerdy Girl Success Career and Leadership Summit">
+        <div class="card-body">
+          <h3>Nerdy Girl Success — Career & Leadership Summit</h3>
+          <span class="meta">Panelist · 2024</span>
+          <p>Spoke with aspiring young women and future leaders about careers in tech and leadership.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/ai-native-women-nyc.jpg" alt="AI-Native Women NYC event by Her Frontier">
+        <div class="card-body">
+          <h3>AI-Native Women NYC · Her Frontier</h3>
+          <span class="meta">Attendee · 2026</span>
+          <p>"Build, Operate, Influence" — a community of women learning, building, and creating with AI.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/harvard-wib.jpg" alt="Women in Business Conference at Harvard Business School">
+        <div class="card-body">
+          <h3>Women in Business Conference · Harvard Business School</h3>
+          <span class="meta">Attendee · 2025</span>
+          <p>34th Annual conference: "Breaking Barriers, Building Bridges." Also attended IBM's Quantum Industry Webinar on the path to quantum advantage in optimization (2026).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="hackathons">
+  <div class="container">
+    <h2 class="section-title">Hackathon Wins</h2>
+    <p class="section-sub">Building fast, winning awards.</p>
+    <div class="grid">
+
+      <div class="card photo">
+        <img src="images/n2n-hackathon.jpg" alt="N2N Hackathon win at Columbia University">
+        <div class="card-body">
+          <span class="win-flag">🏆 Winner — Most Community-Focused</span>
+          <h3>Narrative 2 Numbers (N2N) Hackathon · Columbia</h3>
+          <span class="meta">2025 · Team "Voice to Metrics" · $1,000 AWS credits</span>
+          <p>Won the Most Community-Focused track with Voice to Metrics, turning community narratives into actionable data.</p>
+        </div>
+      </div>
+
+      <div class="card photo">
+        <img src="images/isg-hackathon-2025.jpg" alt="Dell Technologies ISG Hackathon 2025 Best Innovative Idea">
+        <div class="card-body">
+          <span class="win-flag">🏆 Best Innovative Idea</span>
+          <h3>Dell Technologies ISG Hackathon 2025</h3>
+          <span class="meta">2025 · Special Recognition</span>
+          <p>Won "Best Innovative Idea" among teams across Dell's Infrastructure Solutions Group.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications & Awards</h2>
+    <p class="section-sub">Recognized with $43K+ in scholarships and awards.</p>
+    <ul class="cert-list">
+      <li><span class="title">Generative AI with Large Language Models</span><br><span class="issuer">DeepLearning.AI · AWS · Coursera — 2024</span></li>
+      <li><span class="title">Machine Learning</span><br><span class="issuer">Certification</span></li>
+      <li><span class="title">Advance Diploma in Computer Applications</span><br><span class="issuer">Haryana State Council IT Education Center</span></li>
+      <li><span class="title">Summa Cum Laude & Dean's List</span><br><span class="issuer">UMass Lowell, B.S. Computer Science</span></li>
+      <li><span class="title">International Scholarship 2020–21 · Summer Leadership Academy Scholarship · Research Symposium 2021 "Fan Favorite"</span><br><span class="issuer">UMass Lowell & Leadership Academy — $43K+ total in scholarships and awards</span></li>
+    </ul>
+  </div>
+</section>
+
 <section id="research">
   <div class="container">
     <h2 class="section-title">Publications & Patent</h2>
-    <p class="section-sub">Peer-reviewed research across AI education, human-centered AI, and time series — plus one US patent. Full list on <a href="https://scholar.google.com/citations?user=jS5xSVAAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="section-sub">Peer-reviewed research across AI education, human-centered AI, and time series — plus one US patent. Full list on <a href="https://scholar.google.com/scholar?q=Garima+Jain+UMass+Lowell" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <ul class="pub-list">
       <li><span class="venue">PATENT</span><span class="title">Using Thread CPU Utilization Patterns to Analyze Storage Node Performance Problems</span></li>
       <li><span class="venue">SIGCSE 2024</span><span class="title">ChemAIstry: A Novel Software Tool for Teaching Model Training in K-8 Education</span></li>
